@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
-import App from './components/App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import reducers from './reducers';
+import Routes from './routes';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore)
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
 ReactDOM.render(
   <Provider
@@ -16,7 +19,7 @@ ReactDOM.render(
         window.__REDUX_DEVTOOLS_EXTENSION__()
     )}
   >
-    <App />
+  <Routes />
   </Provider>,
   document.querySelector('#root')
 )
