@@ -1,5 +1,9 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { bindActionCreators } from 'redux';
 
@@ -7,6 +11,8 @@ import '../style/style.css';
 
 import { deletePost, readAllPost } from '../actions';
 import PostListItem from '../components/PostListItem';
+
+library.add(faPlus)
 
 class PostList extends Component {
   componentWillMount() {
@@ -22,6 +28,14 @@ class PostList extends Component {
     return (
       <div>
         <h1>Liste des posts</h1>
+        <div className="buttonAdd">
+          <Link to="create-form">
+            <button className="btn btn-primary rounded-circle btn-lg">
+              <FontAwesomeIcon icon="plus" />
+            </button>
+          </Link>
+        </div>
+
         <table className="table">
           <thead>
             <tr>

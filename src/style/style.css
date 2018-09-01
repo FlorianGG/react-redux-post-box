@@ -1,3 +1,6 @@
+body.container {
+  position: relative;
+}
 .fade-enter {
   opacity: 0.01;
 }
@@ -11,7 +14,10 @@
 .fade-exit-active {
   transform: translate(-1000%);
   opacity: 0.01;
-  transition-property: opacity, transform;
-  transition-duration: 3000ms;
-  transition-timing-function: ease-in;
+  transition: opacity 0.3s ease-in, transform 3s ease-in;
+}
+.buttonAdd {
+  position: fixed;
+  top: 50%;
+  right: 10px;
 }
