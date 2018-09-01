@@ -4,8 +4,8 @@ import reducerActivePost from './reducerActivePost';
 import reducerPosts from './reducerPosts';
 
 const rootReducer = combineReducers({
-  posts : reducerPosts,
-  activePost : reducerActivePost
-});
+  posts: reducerPosts,
+  activePost: reducerActivePost,
+})
 
-export default rootReducer;
+export default rootReducer

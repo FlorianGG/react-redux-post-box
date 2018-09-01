@@ -9,18 +9,18 @@ import PostList from './containers/PostList';
 class Routes extends Component {
   render() {
     return (
-        <Router>
-          <div>
-            <Switch>
-              <Route exact path="/" component={PostList}/>
-              <Route path="/create-form" component={PostForm}/>
-              <Route path="/post/:id" component={Post}/>
-              <Route component={NotFound}/>
-            </Switch>
-          </div>
-        </Router>
-    );
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={PostList} />
+            <Route path="/create-form" component={PostForm} />
+            <Route path="/post/:id" component={Post} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
+    )
   }
 }
 
-export default Routes;
+export default Routes

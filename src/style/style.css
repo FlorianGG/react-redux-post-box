@@ -1,0 +1,17 @@
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  transform: translate(-1000%);
+  opacity: 0.01;
+  transition-property: opacity, transform;
+  transition-duration: 3000ms;
+  transition-timing-function: ease-in;
+}
