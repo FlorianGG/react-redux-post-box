@@ -1,6 +1,6 @@
-export const AT_POST  = {
-  delete : 'DELETE_POST',
-  create : 'CREATE_POST',
-  read : 'READ_POST',
-  readAll : 'READ_POST',
+export const AT_POSTS = {
+  DELETE : "DELETE_POST",
+  CREATE : "CREATE_POST",
+  READ : "READ_POST",
+  READ_ALL : "READ_ALL_POST"
 }

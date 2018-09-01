@@ -9,5 +9,5 @@
 - npm install
 - npm start
 - If necessary, please to install also Json Server  with `npm install -g json-server`
-- execute command `json-server --watch fillDB.js`
+- execute command `json-server --watch fillDB.js --port 8080`
 - Enjoy :D
