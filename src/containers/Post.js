@@ -1,12 +1,9 @@
-/* import createHistory from 'history/createBrowserHistory'; */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { readPost } from '../actions';
 import PostContent from '../components/PostContent';
-
-/* export const history = createHistory() */
 
 class Post extends Component {
   componentWillMount() {

@@ -37,16 +37,15 @@ export function deletePost(id) {
 export function createPost(post) {
   return dispatch => {
     axios
-      .post(`${END_POINT}/posts/`, {
+      .post(`${END_POINT}/posts`, {
         title: post.title,
         content: post.content,
         author: post.author,
       })
       .then(response => {
-        post.id = response.data.id
         dispatch({
           type: AT_POSTS.CREATE,
-          payload: post,
+          payload: response.data,
         })
       })
   }

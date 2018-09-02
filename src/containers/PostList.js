@@ -15,6 +15,9 @@ import PostListItem from '../components/PostListItem';
 library.add(faPlus)
 
 class PostList extends Component {
+  state = {
+    displayOnlyMyPost: false,
+  }
   componentWillMount() {
     this.props.readAllPost()
   }
@@ -23,11 +26,45 @@ class PostList extends Component {
   deletePostCallback = post => {
     this.props.deletePost(post.id)
   }
+  //arrow function for bind this
+  changeDisplayedPost = e => {
+    this.setState({ displayOnlyMyPost: e.target.checked })
+  }
+  filterMyPost(postsList) {
+    return postsList.filter(post => {
+      if (post.author === 'Moi') {
+        return true
+      } else {
+        false
+      }
+    })
+  }
   render() {
     const { posts } = this.props
+    let arrayPosts
+    if (posts) {
+      if (this.state.displayOnlyMyPost) {
+        arrayPosts = this.filterMyPost(posts)
+      } else {
+        arrayPosts = posts
+      }
+    }
+
     return (
       <div>
         <h1>Liste des posts</h1>
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            value=""
+            id="myPosts"
+            onChange={this.changeDisplayedPost}
+          />
+          <label className="form-check-label" htmlFor="myPosts">
+            Afficher uniquement mes posts
+          </label>
+        </div>
         <div className="buttonAdd">
           <Link
             to="create-form"
@@ -46,8 +83,8 @@ class PostList extends Component {
           </thead>
 
           <TransitionGroup component="tbody">
-            {posts &&
-              posts.map(post => {
+            {arrayPosts &&
+              arrayPosts.map(post => {
                 return (
                   <CSSTransition key={post.id} timeout={500} classNames="fade">
                     <PostListItem
