@@ -29,10 +29,11 @@ class PostList extends Component {
       <div>
         <h1>Liste des posts</h1>
         <div className="buttonAdd">
-          <Link to="create-form">
-            <button className="btn btn-primary rounded-circle btn-lg">
-              <FontAwesomeIcon icon="plus" />
-            </button>
+          <Link
+            to="create-form"
+            className="btn btn-primary rounded-circle btn-lg"
+          >
+            <FontAwesomeIcon icon="plus" />
           </Link>
         </div>
 
